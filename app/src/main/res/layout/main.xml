@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:gravity="center">
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_above="@+id/mainLinearLayout1">
+
+		<com.mao.cal.MyViewGroup
+			xmlns:mao="http://schemas.android.com/apk/res/com.mao.cal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="#11D211ED"
+			android:id="@+id/MyViewGroup"
+			mao:column="12"
+			mao:margin="6"
+			mao:row="28"
+			android:paddingLeft="10dp"
+			android:paddingRight="10dp"/>
+
+	</ScrollView>
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:id="@+id/mainLinearLayout1"
+		android:gravity="center"
+		android:layout_marginBottom="3dp">
+
+		<ToggleButton
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:gravity="center"
+			android:textOn="插旗"
+			android:textOff="翻开"
+			android:onClick="change"
+			android:textColor="#FFF7205A"
+			android:layout_weight="1.0"
+			android:layout_marginBottom="5dp"/>
+
+		<Button
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:text="重新开始"
+			android:layout_weight="1.0"
+			android:onClick="update"
+			android:layout_marginBottom="5dp"/>
+
+	</LinearLayout>
+
+</RelativeLayout>
+

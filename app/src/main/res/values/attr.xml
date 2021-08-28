@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<declare-styleable name="MyViewGroup">
+	    <attr name="text" format="string" />
+	    <attr name="column" format="integer"/>
+	    <attr name="margin" format="integer"/>
+	    <attr name="row" format="integer"/>
+	    <attr name="color" />
+	</declare-styleable>
+</resources>
