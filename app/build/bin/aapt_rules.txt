@@ -78,12 +78,12 @@
 # view res/layout/view.xml #generated:2
 -keep class com.mao.cal.MyTextView { <init>(...); }
 
-# view res/layout/main.xml #generated:13
+# view res/layout/main.xml #generated:14
 -keep class com.mao.cal.MyViewGroup { <init>(...); }
 
-# onClick res/layout/main.xml #generated:36
+# onClick res/layout/main.xml #generated:35
 -keepclassmembers class * { *** change(...); }
 
-# onClick res/layout/main.xml #generated:47
+# onClick res/layout/main.xml #generated:46
 -keepclassmembers class * { *** update(...); }
 
