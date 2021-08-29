@@ -70,16 +70,16 @@
 -keep class android.support.v7.widget.ViewStubCompat { <init>(...); }
 
 # view AndroidManifest.xml #generated:26
--keep class com.mao.cal.DialogActivity { <init>(...); }
+-keep class com.mao.lei.DialogActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:17
--keep class com.mao.cal.MainActivity { <init>(...); }
+-keep class com.mao.lei.MainActivity { <init>(...); }
 
 # view res/layout/view.xml #generated:2
--keep class com.mao.cal.MyTextView { <init>(...); }
+-keep class com.mao.lei.MyTextView { <init>(...); }
 
 # view res/layout/main.xml #generated:14
--keep class com.mao.cal.MyViewGroup { <init>(...); }
+-keep class com.mao.lei.MyViewGroup { <init>(...); }
 
 # onClick res/layout/main.xml #generated:35
 -keepclassmembers class * { *** change(...); }

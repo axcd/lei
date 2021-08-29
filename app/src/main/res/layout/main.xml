@@ -11,8 +11,8 @@
 		android:layout_height="match_parent"
 		android:layout_above="@+id/mainLinearLayout1">
 
-		<com.mao.cal.MyViewGroup
-			xmlns:mao="http://schemas.android.com/apk/res/com.mao.cal"
+		<com.mao.lei.MyViewGroup
+			xmlns:mao="http://schemas.android.com/apk/res/com.mao.lei"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:background="#11D211ED"
