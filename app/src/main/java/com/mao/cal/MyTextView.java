@@ -9,6 +9,7 @@ public class MyTextView extends TextView
 	private int num;
 	private int m;
 	private int n;
+	private boolean opened;
 	
 	public MyTextView(Context context)
 	{
@@ -18,6 +19,16 @@ public class MyTextView extends TextView
 	public MyTextView(Context context,AttributeSet attr)
 	{
 		super(context,attr);
+	}
+
+	public void setOpened(boolean opened)
+	{
+		this.opened = opened;
+	}
+
+	public boolean isOpened()
+	{
+		return opened;
 	}
 
 	public void setNum(int num)

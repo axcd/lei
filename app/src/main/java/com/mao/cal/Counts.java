@@ -38,7 +38,7 @@ public class Counts
 		{
 			for(int j=0;j<counts[0].length;j++)
 			{
-			    int x = (int)(Math.random()*6);
+			    int x = (int)(Math.random()*5);
 				if(x==1)
 				{
 					n--;

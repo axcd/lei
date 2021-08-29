@@ -17,9 +17,9 @@
 			android:layout_height="wrap_content"
 			android:background="#11D211ED"
 			android:id="@+id/MyViewGroup"
-			mao:column="12"
+			mao:column="13"
 			mao:margin="6"
-			mao:row="28"/>
+			mao:row="29"/>
 
 	</ScrollView>
 

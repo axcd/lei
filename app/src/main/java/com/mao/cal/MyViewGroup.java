@@ -60,6 +60,7 @@ public class MyViewGroup extends ViewGroup
 			{
 				final MyTextView rb = (MyTextView)LayoutInflater.from(this.getContext()).inflate(R.layout.view, null, false);
 				this.addView(rb);
+				rb.setNum(counts[i][j]);
 				rb.setM(i);
 				rb.setN(j);
 
@@ -75,37 +76,19 @@ public class MyViewGroup extends ViewGroup
 							{
 								if (!MainActivity.flag)
 								{
-									if (x == -1)
+									if (x==-1)
 									{
 										rb.setBackgroundResource(R.drawable.lei);
 										//update();
 										setState(false);
-
 										Intent intent = new Intent();
 										intent.setClass(MyViewGroup.this.getContext(), DialogActivity.class);
 										intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
 										MyViewGroup.this.getContext().startActivity(intent);
+									}else{
+										open(rb);
 									}
-									else
-									{
-										rb.setText("" + x);
-										rb.setTextColor(Color.parseColor("#FF0000FF"));
-										rb.setBackgroundColor(Color.parseColor("#5000F0F0"));
-
-										if (--n == 0)
-										{
-											//恭喜过关
-											rb.setText("过关");
-											rb.setTextColor(Color.parseColor("#FFFF0000"));
-										}
-
-									}
-									rb.setOnClickListener(new View.OnClickListener(){public void onClick(View view)
-											{}});
-
-								}
-								else
-								{
+								}else{
 									if (flag)
 									{
 										rb.setBackgroundResource(R.drawable.flag);
@@ -162,6 +145,90 @@ public class MyViewGroup extends ViewGroup
 			{
 				child.layout((i%column)*(width+margin)+margin, (i/column)*(height+margin)+margin, (i%column+1)*(width+margin), (i/column+1)*(height+margin));	
 			}
+		}
+	}
+	
+	public void discover(MyTextView mv)
+	{
+		int i = mv.getM();
+		int j = mv.getN();	
+		
+		mv.setOpened(true);
+		
+		if(i-1>=0&&j-1>=0)
+		{
+			MyTextView t = (MyTextView)getChildAt((i-1)*column+j-1);
+			if(!t.isOpened())open(t);
+		}
+
+		if(i-1>=0)
+		{
+			MyTextView t = (MyTextView)getChildAt((i-1)*column+j);
+			if(!t.isOpened())open(t);
+		}
+
+		if(i-1>=0&&j+1<column)
+		{
+			MyTextView t = (MyTextView)getChildAt((i-1)*column+j+1);
+			if(!t.isOpened())open(t);
+		}
+		
+		if(j-1>=0)
+		{
+			MyTextView t = (MyTextView)getChildAt(i*column+j-1);
+			if(!t.isOpened())open(t);
+		}
+	
+		if(j+1<column)
+		{
+			MyTextView t = (MyTextView)getChildAt(i*column+j+1);
+			if(!t.isOpened())open(t);
+		}
+
+		if(i+1<row&&j-1>=0)
+		{
+			MyTextView t = (MyTextView)getChildAt((i+1)*column+j-1);
+			if(!t.isOpened())open(t);
+		}
+		
+		if(i+1<row)
+		{
+			MyTextView t = (MyTextView)getChildAt((i+1)*column+j);
+			if(!t.isOpened())open(t);
+		}
+	
+		if(i+1<row&&j+1<column)
+		{
+			MyTextView t = (MyTextView)getChildAt((i+1)*column+j+1);
+			if(!t.isOpened())open(t);
+		}
+	}
+	
+	public void open(MyTextView mtv)
+	{
+		int num = mtv.getNum();
+		
+		if (mtv.getNum() == 0)
+		{
+			mtv.setText("");
+			if (!mtv.isOpened())
+			{
+				discover(mtv);
+			}
+		}else{
+			mtv.setText(num+"");
+		}
+
+		mtv.setOpened(true);
+		mtv.setTextColor(Color.parseColor("#FF0000FF"));
+		mtv.setBackgroundColor(Color.parseColor("#3000F0F0"));
+		mtv.setOnClickListener(new View.OnClickListener(){public void onClick(View view){}});
+		
+		if (--n==0)
+		{
+			//恭喜过关
+			mtv.setText("过关");
+			mtv.setTextColor(Color.parseColor("#FFFF0000"));
 		}
 	}
 	
